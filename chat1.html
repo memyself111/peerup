@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat | PeerUp</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f6fa;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .friend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .navbar {
+  position: fixed;
+  bottom: 0;
+  width: 32px;  /* Adjust the width */
+  height: 32px;
+  width: 100%;
+  background-color: #4776eb;
+  display: flex;
+  justify-content: space-around;
+  position: fixed; bottom: 0; width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+body {
+    padding-bottom: 70px; /* slightly bigger than navbar height */
+}
+
+.navbar a img {
+ width: 30px;  /* Adjust the width */
+  height: 30px;
+  border-radius: 50%; /* Makes the icon circular */
+  padding: 10px; /* Space around the icon */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+    .friend-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .friend-card:hover {
+      transform: scale(1.02);
+      background-color: #e8f0fe;
+    }
+
+    .friend-card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+    .friend-card span {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Chats</h1>
+  <div class="friend-list">
+    <a href="chat_room.html?user=vaish" class="friend-card">
+      <img src="https://i.pinimg.com/736x/30/ec/2d/30ec2d1d45be477e59c4f8d20ddd8c58.jpg" alt="Vaish" />
+      <span>Vaish</span>
+    </a>
+
+    <a href="chat_room.html?user=rahul" class="friend-card">
+      <img src="https://i.pinimg.com/736x/4b/47/f3/4b47f38c832f625b1f1008113c2db8e8.jpg" alt="Rahul" />
+      <span>Dhanya</span>
+    </a>
+
+    <a href="chat_room.html?user=sneha" class="friend-card">
+      <img src="https://i.pinimg.com/736x/0b/2c/ea/0b2ceafeba8bb18dd86531aac8404c3a.jpg" alt="Sneha" />
+      <span>Sneha</span>
+    </a>
+    <nav class="navbar">
+      <a href="chat1.html" title="Chat"><img src="https://i.pinimg.com/736x/30/ec/2d/30ec2d1d45be477e59c4f8d20ddd8c58.jpg" /></a>
+      <a href="peerup.html" title="Home"><img src="https://i.pinimg.com/474x/9d/b7/03/9db703fb0619404b949da42cb76b8772.jpg" /></a>
+      <a href="upload.html" title="Upload"><img src="https://i.pinimg.com/736x/0b/2c/ea/0b2ceafeba8bb18dd86531aac8404c3a.jpg" /></a>
+      <a href="live.html" title="Live"><img src="https://i.pinimg.com/474x/10/26/1c/10261cd189e43a8e1f9282949140e9ad.jpg" /></a>
+      <a href="profile.html" title="Profile"><img src="https://i.pinimg.com/736x/4b/47/f3/4b47f38c832f625b1f1008113c2db8e8.jpg" /></a>
+    </nav>
+  </div>
+</body>
+</html>

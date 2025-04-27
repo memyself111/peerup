@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef2f7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-card {
+    background: #fff;
+    width: 100%; /* Change width to 100% to take full width */
+    height: 100vh; /* Set height to 100vh to take full height of the viewport */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    box-sizing: border-box; /* Ensure padding is included in the total width/height */
+}
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 25px;
+      flex-shrink: 0;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-info h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #222;
+    }
+    .profile-info p {
+      margin: 6px 0 0;
+      color: #666;
+      font-size: 15px;
+    }
+    .section {
+      margin-bottom: 35px;
+    }
+    .section h2 {
+      font-size: 20px;
+      color: #333;
+      border-bottom: 3px solid #db9df3;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+    .courses-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .courses-list li {
+      display: inline-block;
+      background-color: #7b4491;
+      color: #bd47eb;
+      padding: 10px 16px;
+      border-radius: 25px;
+      margin: 6px 10px 6px 0;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .navbar {
+  position: fixed;
+  bottom: 0;
+  width: 32px;  /* Adjust the width */
+  height: 32px;
+  width: 100%;
+  background-color: #bd47eb;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar a img {
+ width: 30px;  /* Adjust the width */
+  height: 30px;
+  border-radius: 50%; /* Makes the icon circular */
+  padding: 10px; /* Space around the icon */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+    .activity-tracking {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 110px;
+    }
+    .activity-bar {
+      width: 12%;
+      background-color: #cb7eea;
+      border-radius: 6px 6px 0 0;
+      height: 0;
+      transition: height 0.6s ease;
+      cursor: pointer;
+    }
+    html, body {
+  height: 100%; /* Ensure full height */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content to bottom */
+  align-items: center;       /* Center horizontally */
+  background: #eee;
+}
+
+/* Button Styling */
+button {
+  width: 120px;
+  height: 35px;
+  margin-bottom: 20px;
+  color: #fff;
+  background: #7b4491;
+  font-size: 0.9em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7b4491;
+}
+
+/* Optional: Container if needed */
+.logout-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Optional: Label or link inside logout section */
+.logout label {
+  color: #7b4491;
+  font-size: 0.8em;
+}
+
+.logout-section a {
+  text-decoration: none;
+  color: #333;
+}
+
+    .activity-bar:hover {
+      background-color: #7b4491;
+    }
+    .points-container {
+      text-align: center;
+    }
+    .points-label {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .points {
+      font-size: 36px;
+      font-weight: 900;
+      color: #7b4491;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card" role="main" aria-label="User profile page">
+    <div class="profile-header">
+      <div class="profile-photo" aria-label="User profile photo">
+        <img src="https://i.pinimg.com/474x/d3/7b/02/d37b020e87945ad7f245e48df752ed03.jpg" alt="User photo">
+      </div>
+      <div class="profile-info">
+        <h1 id="userName">XYZ</h1>
+        <p id="userEmail">xyz@example.com</p>
+      </div>
+    </div>
+
+    <div class="section" aria-labelledby="coursesTitle">
+      <h2 id="coursesTitle">Courses Enrolled</h2>
+      <ul class="courses-list" id="coursesList" aria-live="polite">
+        <!-- Courses will be populated here -->
+      </ul>
+    </div>
+
+    <div class="section" aria-labelledby="activityTitle">
+      <h2 id="activityTitle">Activity Tracking (Last 7 Days)</h2>
+      <div class="activity-tracking" id="activityTracking" aria-live="polite" aria-label="User activity graph">
+        <!-- Activity bars will be populated here -->
+      </div>
+    </div>
+
+    <div class="section points-container" aria-live="polite">
+      <div class="points-label">Points Earned in Daily Tests</div>
+      <div class="points" id="pointsEarned">0</div>
+    </div>
+  </div>
+  <div class="logout-section">
+    <a href="login.html" title="Log Out">
+        <button>logout</button>
+    </a>
+  </div>
+</div>
+
+  <script>
+    const userData = {
+      name: "Karan P",
+      email: "karan@example.com",
+      courses: ["DSA", "Web development", "AIML", "Data Science","Cyber Security","IoT"],
+      activity: [35, 60, 45, 80, 55, 70, 90],
+      points: 1450
+    };
+
+    document.getElementById('userName').textContent = userData.name;
+    document.getElementById('userEmail').textContent = userData.email;
+
+    const coursesList = document.getElementById('coursesList');
+    userData.courses.forEach(course => {
+      const li = document.createElement('li');
+      li.textContent = course;
+      coursesList.appendChild(li);
+    });
+
+    const activityTracking = document.getElementById('activityTracking');
+    userData.activity.forEach((value, index) => {
+      const bar = document.createElement('div');
+      bar.className = 'activity-bar';
+      bar.setAttribute('tabindex', '0');
+      bar.setAttribute('aria-label', `Activity for day ${index + 1}: ${value}%`);
+      activityTracking.appendChild(bar);
+      setTimeout(() => {
+        bar.style.height = value + '%';
+      }, index * 150);
+    });
+
+    const pointsElem = document.getElementById('pointsEarned');
+    let currentPoints = 0;
+    const targetPoints = userData.points;
+    const increment = Math.ceil(targetPoints / 100);
+    const interval = setInterval(() => {
+      currentPoints += increment;
+      if (currentPoints >= targetPoints) {
+        pointsElem.textContent = targetPoints;
+        clearInterval(interval);
+      } else {
+        pointsElem.textContent = currentPoints;
+      }
+    }, 20);
+  </script>
+   <nav class="navbar">
+    <a href="chat.html" title="Chat"><img src="https://i.pinimg.com/736x/30/ec/2d/30ec2d1d45be477e59c4f8d20ddd8c58.jpg" /></a>
+    <a href="peerup.html" title="Home"><img src="https://i.pinimg.com/474x/9d/b7/03/9db703fb0619404b949da42cb76b8772.jpg" /></a>
+    <a href="upload.html" title="Upload"><img src="https://i.pinimg.com/736x/0b/2c/ea/0b2ceafeba8bb18dd86531aac8404c3a.jpg" /></a>
+    <a href="live.html" title="Live"><img src="https://i.pinimg.com/474x/10/26/1c/10261cd189e43a8e1f9282949140e9ad.jpg" /></a>
+    <a href="profile.html" title="Profile"><img src="https://i.pinimg.com/736x/4b/47/f3/4b47f38c832f625b1f1008113c2db8e8.jpg" /></a>
+  </nav>
+</body>
+</html>

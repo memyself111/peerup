@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.top-bar {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
+}
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 42px;  /* Adjust the width */
+  height: 42px;
+  width: 100%;
+  background-color: #007BFF;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar a img {
+ width: 32px;  /* Adjust the width */
+  height: 32px;
+  border-radius: 50%; /* Makes the icon circular */
+  padding: 10px; /* Space around the icon */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+.stream-box {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.video-placeholder {
+  background-color: #dcdcdc;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.session-info p {
+  margin: 5px 0;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #357ac8;
+}
+
+.chat-section {
+  width: 35%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.send-btn {
+  background-color: #3603ed;
+}
+
+.send-btn:hover {
+  background-color: #3603ed;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stream-box,
+  .chat-section {
+    width: 90%;
+  }
+}
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PeerUp - Live Study Session</title>
+  <link rel="stylesheet" href="live.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>PeerUp Live Study Room</h1>
+  </header>
+
+  <main class="container">
+    <section class="stream-box">
+      <div class="video-placeholder">
+        <p>Live Stream Window</p>
+      </div>
+      <div class="session-info">
+        <p><strong>Topic:</strong> DSA Crash Course</p>
+        <p><strong>Mentor:</strong> @mentor_name</p>
+        <p><strong>Viewers:</strong> <span id="viewer-count">23</span></p>
+        <button class="btn live-btn">Go Live</button>
+        <button class="btn join-btn">Join Live</button>
+      </div>
+    </section>
+
+    <section class="chat-section">
+      <h3>Live Chat</h3>
+      <div class="chat-box" id="chat-box">
+        <!-- Messages will appear here -->
+        <p><strong>@peer123:</strong> Ready to begin!</p>
+        <p><strong>@mentor_name:</strong> Let's dive in!</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message..." />
+        <button class="btn send-btn">Send</button>
+      </div>
+    </section>
+  </main>
+  <nav class="navbar">
+    <a href="chat.html" title="Chat"><img src="https://i.pinimg.com/736x/30/ec/2d/30ec2d1d45be477e59c4f8d20ddd8c58.jpg" /></a>
+    <a href="peerup.html" title="Home"><img src="https://i.pinimg.com/474x/9d/b7/03/9db703fb0619404b949da42cb76b8772.jpg" /></a>
+    <a href="upload.html" title="Upload"><img src="https://i.pinimg.com/736x/0b/2c/ea/0b2ceafeba8bb18dd86531aac8404c3a.jpg" /></a>
+    <a href="live.html" title="Live"><img src="https://i.pinimg.com/474x/10/26/1c/10261cd189e43a8e1f9282949140e9ad.jpg" /></a>
+    <a href="profile.html" title="Profile"><img src="https://i.pinimg.com/736x/4b/47/f3/4b47f38c832f625b1f1008113c2db8e8.jpg" /></a>
+  </nav>
+</body>
+</html>

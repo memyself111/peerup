@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PeerPod | Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f6fa;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #dfadf6, #c159f1, #a904f5);
+}
+
+header {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.search-bar {
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.feed {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 32px;  /* Adjust the width */
+  height: 32px;
+  width: 100%;
+  background-color: #007BFF;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar a img {
+ width: 30px;  /* Adjust the width */
+  height: 30px;
+  border-radius: 50%; /* Makes the icon circular */
+  padding: 10px; /* Space around the icon */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center vertically */
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover img {
+  transform: scale(1.2);
+}
+  </style>
+  <header>
+    <input type="text" placeholder="Search..." class="search-bar" />
+    <h1>Welcome to PeerPod Community</h1>
+  </header>
+
+  <main class="feed">
+    <div class="card">
+      <h2>� Group Study on DSA</h2>
+      <p>Join our DSA crash course group study at 6 PM.</p>
+    </div>
+    <div class="card">
+      <h2>🔴 Live Coding Session</h2>
+      <p>Attend a live session on Groq and Monad tonight!</p>
+    </div>
+  </main>
+
+  <nav class="navbar">
+    <a href="chat1.html" title="Chat"><img src="https://i.pinimg.com/736x/30/ec/2d/30ec2d1d45be477e59c4f8d20ddd8c58.jpg" /></a>
+    <a href="peerup.html" title="Home"><img src="https://i.pinimg.com/474x/9d/b7/03/9db703fb0619404b949da42cb76b8772.jpg" /></a>
+    <a href="upload.html" title="Upload"><img src="https://i.pinimg.com/736x/0b/2c/ea/0b2ceafeba8bb18dd86531aac8404c3a.jpg" /></a>
+    <a href="live.html" title="Live"><img src="https://i.pinimg.com/474x/10/26/1c/10261cd189e43a8e1f9282949140e9ad.jpg" /></a>
+    <a href="profile.html" title="Profile"><img src="https://i.pinimg.com/736x/4b/47/f3/4b47f38c832f625b1f1008113c2db8e8.jpg" /></a>
+  </nav>
+</body>
+</html>
